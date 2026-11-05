@@ -1,0 +1,30 @@
+:root { --bg:#f5f6f8; --card:#fff; --text:#1c1e21; --muted:#6b7280; --accent:#2563eb; --ok:#16a34a; --bad:#dc2626; --warn:#d97706; --border:#e5e7eb; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#111418; --card:#1b1f26; --text:#e6e8eb; --muted:#9aa3af; --border:#2c333d; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:15px/1.4 system-ui, sans-serif; }
+main { max-width:560px; margin:0 auto; padding:24px 16px; display:grid; gap:16px; }
+h1 { margin:0 0 4px; font-size:22px; }
+h2 { margin:0; font-size:17px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+header { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+header h2 { flex:1; }
+.status { display:flex; align-items:center; gap:6px; color:var(--muted); font-size:13px; }
+.dot { width:10px; height:10px; border-radius:50%; background:var(--muted); }
+[data-state="connected"] .dot { background:var(--ok); }
+[data-state="disconnected"] .dot { background:var(--bad); }
+[data-state="pending"] .dot { background:var(--warn); }
+.actions { display:flex; gap:8px; }
+.hint { color:var(--muted); font-size:13px; text-align:center; margin:8px 0 0; }
+.qr { display:block; width:264px; max-width:100%; margin:12px auto 0; background:#fff; padding:6px; border-radius:8px; }
+form { display:grid; gap:10px; margin-top:14px; }
+input, textarea { width:100%; padding:10px; border:1px solid var(--border); border-radius:8px; background:transparent; color:inherit; font:inherit; }
+textarea { resize:vertical; }
+button { padding:9px 16px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
+button.secondary { background:transparent; color:var(--muted); border:1px solid var(--border); }
+button:disabled, input:disabled, textarea:disabled { opacity:.5; cursor:not-allowed; }
+.result { margin:0; min-height:1.4em; font-size:13px; }
+.result.ok { color:var(--ok); }
+.result.err { color:var(--bad); }
+[hidden] { display:none !important; }
