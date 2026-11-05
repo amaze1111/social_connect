@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Social Connect",
+  "version": "0.1.0",
+  "description": "Sends WhatsApp and LinkedIn messages from your own logged-in accounts when you ask from the portal.",
+  "permissions": ["tabs", "scripting", "cookies", "storage"],
+  "host_permissions": ["https://web.whatsapp.com/*", "https://www.linkedin.com/*"],
+  "background": { "service_worker": "background.js" },
+  "externally_connectable": { "matches": ["http://localhost/*"] }
+}
